@@ -10,6 +10,7 @@ def twoSum( nums, target):
                     continue
 
 print(twoSum([1,2,3,4,5,5,6], 10)) ##Go to another branch, new new new 
-## tsting
+## tsting, nothing????
 
+print(twoSum([1,2,3,4,5,5,6], 11))
 
