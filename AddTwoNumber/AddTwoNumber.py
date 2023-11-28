@@ -1,29 +1,34 @@
 # Definition for singly-linked list.
-# class ListNode(object):
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-def addTwoNumbers( l1, l2):
-    len_max = max(len(l1), len(l2))
-    sum = 0
-    buffer = 0
-    result = []
-    for index in range(len_max):
-        if (index ) == len(l1):
-            value_l1 = 0
-        else:    
-            value_l1 = l1[index]
-        if (index ) == len(l2):
-            value_l2 = 0
-        else:    
-            value_l2 = l2[index]
-        sum = (value_l1 + value_l2 + buffer) % 10
-        buffer = (value_l1 + value_l2) // 10
-        result.append(sum)
-    return  result
+class ListNode(object):
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+class Solution(object):
+    def addTwoNumbers(self, l1, l2):
+        """
+        :type l1: ListNode
+        :type l2: ListNode
+        :rtype: ListNode
+        """
+        head = ListNode()
+        l1 = ListNode()
+        l2 = ListNode()
+        current = head
+        carry = 0
+        while (l1 != None or l2 != None or carry !=0):
+            l1_value = l1.val if l1 else 0
+            l2_value = l2.val if l2 else 0
+            total = l1_value + l2_value + carry
+            current.next = ListNode(total % 10)
+            carry = total // 10
 
-addTwoNumbers([1,9,3,8,7],[3,3,3,3])
+            l1 = l1.next if l1 else None
+            l2 = l2.next if l2 else None
+            current = current.next
+        return head.next
 
-#   1    9   3   8   7
-#   3    3   3   3   
-#   4    2   7   1   8
+ex = Solution()
+ex.addTwoNumbers([1,2,3,4],[1,2,3,4,7])
+for i in ex:
+    print(i)
+
