@@ -27,8 +27,3 @@ class Solution(object):
             current = current.next
         return head.next
 
-ex = Solution()
-ex.addTwoNumbers([1,2,3,4],[1,2,3,4,7])
-for i in ex:
-    print(i)
-
