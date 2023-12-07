@@ -60,7 +60,7 @@ else:
 ```
 
 ## Example 1
-nums1 = [1,4,2,9,5,3] nums2 = [6,8,7,0]
+nums1 = [1,4,2,9,5,3] nums2 = [6,8,7,0]. Expected Median = 4.5
 
 ```
 nums3 = nums1 + nums2 = [1,4,2,9,5,3,6,8,7,0]
@@ -72,7 +72,7 @@ Since length = 10 is Even number:
 ```
 
 ## Example 2
-nums1 = [4,2,9] nums2 = [1,6]
+nums1 = [4,2,9] nums2 = [1,6]. Expected Median = 4.0
 
 ```
 nums3 = nums1 + nums2 = [4,2,9,1,6]
@@ -80,7 +80,7 @@ nums3.sort() = [1,2,4,6,9]
 length = 5
 mid = 2
 Since length = 10 is Odd number:
-    Median =  nums3[2] = 4
+    Median =  nums3[2] = 4.0
 ```
 
 ## Full code [here](./MedianofTwoSortedArrays.py)
