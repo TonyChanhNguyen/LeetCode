@@ -24,5 +24,6 @@ class Solution:
 
         return len(len_result)
 
+# Tesing stage
 test = Solution()
 print(test.lengthOfLongestSubstring("abcbbxyzk"))
