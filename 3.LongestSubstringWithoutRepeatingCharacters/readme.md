@@ -55,136 +55,120 @@ String = "geeks"
 ```
 
 ## Idea
-#### Check if in the end of loop. Compare length of temporary variable less than s_temp, do nothing. Else, temporary variable is the result
-```
-        if((index + 1) == len(s)):
-            if(len(s_temp) > len_max):
-                len_result = s_temp
-                s_temp = ""
-            else:
-                len_result = len_result
-```
+
 #### Define temporary variable
 ```
-        s_temp = ""     # Temporary variable to save substring
-        s_result = ""   # Variable to store the result
-        len_max = 0     # Calculate length of temporary variable
+        result = {}       # To store the result
+        left = 0          # Break point
+        length = 0        # The longest length
 ```
 #### Get each element of string.
 ```
-        for index in range(len(s)):
+        for right in range(len(s)):
 ``` 
 
-#### If this item do not exist in temporary variable. Put it into temporary variable.
+#### If this item exist in temporary variable and its index larger or equal than ``left``. Calculate ``left`` by sum of its index plus 1.
 ```
-        if s[index] not in s_temp:
-            s_temp += s[index]
-```
-
-#### If this item exist in temporary variable. Check length of temporary variable if lager than len_max. Set it for len_max and save value of temporary variable to result. Reset temporary variable to blank.
-```
-        if(len(s_temp) > len_max):
-            len_max = len(s_temp)
-            len_result = s_temp
-            s_temp = ""
+        if char in seen and seen[char] >= left:
+            l = seen[char] + 1
 ```
 
-#### Else, continue with next element.
+#### Else, calculate length.
 ```
         else:
-            continue
+            length = max(length, right - left + 1)
 ```
-####  Set value of temporary variable as item.
-```
-        s_temp = s[index]
-```   
 
+#### Then, update index of char with right.
+```
+        seen[char]  = right
+```
 #### Return the longest length of substring.
 ```
-        return len(len_result)
+        return length
 ```
 
 #### Example
 s = "abcbbxyzk" => Expected result: ``5``, which returned substring is ``bxyzk``.
 + Loop 0/9: (Not yet start)
 ```
-        index       = null
-        s[index]    = ""
-        s_temp      = ""     
-        s_result    = ""   
-        len_max     = 0     
+        seen        = null
+        char        = null
+        left        = null
+        right       = null   
+        length      = null
 ```
 + Loop 1/9: 
 ```
-        index       = 0
-        s[index]    = "a"        # s[index] do not exist in s_temp 
-        s_temp      = "a"        # Then, add s[index] to s_temp
-        s_result    = ""  
-        len_max     = 0    
+        seen        = {"a" : 0,}
+        char        = "a"
+        left        = 0
+        right       = 0  
+        length      = max(0 , 0 - 0 + 1) = 1
 ```
 + Loop 2/9: 
 ```
-        index       = 1
-        s[index]    = "b"       # s[index] do not exist in s_temp 
-        s_temp      = "ab"      # Then, add s[index] to s_temp  
-        s_result    = ""   
-        len_max     = 0     
+        seen        = {"a" : 0,"b" : 1}
+        char        = "b"
+        left        = 0
+        right       = 1  
+        length      = max(1 , 1 - 0 + 1) = 2
 ```
 + Loop 3/9: 
 ```
-        index       = 2
-        s[index]    = "c"       # s[index] do not exist in s_temp 
-        s_temp      = "abc"     # Then, add s[index] to s_temp  
-        s_result    = ""   
-        len_max     = 0     
+        seen        = {"a" : 0,"b" : 1,"c" : 2}
+        char        = "c"
+        left        = 0
+        right       = 2  
+        length      = max(2 , 2 - 0 + 1) = 3
 ```
 + Loop 4/9: 
 ```
-        index       = 3
-        s[index]    = "b"       # s[index] exist in s_temp 
-        s_temp      = ""        # Reset s_temp to blank
-        s_result    = "abc"     # Save value before resetting of s_temp to result
-        len_max     = 3         # Calculate length of s_temp before resetting
+        seen        = {"a" : 0,"b" : 3,"c" : 2}
+        char        = "b"
+        left        = 1 + 1 = 2 # seen["b"] = 1
+        right       = 3  
+        length      = max(3 , 3 - 2 + 1) = 3
 ```
 + Loop 5/9: 
 ```
-        index       = 4
-        s[index]    = "b"       # s[index] do not exist in s_temp 
-        s_temp      = "b"       # Then, add s[index] to s_temp
-        s_result    = "abc"     
-        len_max     = 3         
+        seen        = {"a" : 0,"b" : 4,"c" : 2}
+        char        = "b"
+        left        = 3 + 1 = 4 # seen["b"] = 3
+        right       = 4  
+        length      = max(3 , 4 - 4 + 1) = 3   
 ```
 + Loop 6/9: 
 ```
-        index       = 5
-        s[index]    = "x"       # s[index] do not exist in s_temp 
-        s_temp      = "bx"      # Then, add s[index] to s_temp
-        s_result    = "abc"     
-        len_max     = 3         
+        seen        = {"a" : 0,"b" : 4,"c" : 2,"x" : 3}
+        char        = "x"
+        left        = 4
+        right       = 5  
+        length      = max(3 , 5 - 4 + 1) = 3          
 ```
 + Loop 7/9: 
 ```
-        index       = 6
-        s[index]    = "y"      # s[index] do not exist in s_temp 
-        s_temp      = "bxy"    # Then, add s[index] to s_temp
-        s_result    = "abc"     
-        len_max     = 3         
+        seen        = {"a" : 0,"b" : 4,"c" : 2,"x" : 5,"y" : 6}
+        char        = "y"
+        left        = 4
+        right       = 6  
+        length      = max(3 , 6 - 4 + 1) = 3            
 ```
 + Loop 8/9: 
 ```
-        index       = 7
-        s[index]    = "z"      # s[index] do not exist in s_temp 
-        s_temp      = "bxyz"   # Then, add s[index] to s_temp
-        s_result    = "abc"     
-        len_max     = 3         
+        seen        = {"a" : 0,"b" : 4,"c" : 2,"x" : 5,"y" : 6,"z" : 7}
+        char        = "z"
+        left        = 4
+        right       = 7  
+        length      = max(3 , 7 - 4 + 1) = 4      
 ```
 + Loop 9/9 (end of loop): 
 ```
-        index       = 8         # At the end of loop, len(s_temp) is 5 lager than 3.
-        s[index]    = "k"       # s[index] do not exist in s_temp 
-        s_temp      = ""        # Reset s_temp to blank
-        s_result    = "bxyzk"   # The result is value of s_temp  
-        len_max     = 5        
+        seen        = {"a" : 0,"b" : 4,"c" : 2,"x" : 5,"y" : 6,"z" : 7,"k" : 8}
+        char        = "k"
+        left        = 4
+        right       = 8  
+        length      = max(3 , 8 - 4 + 1) = 5  
 ```
 
 ## Full code [here](./LongestSubstringWithoutRepeatingCharacters.py)
