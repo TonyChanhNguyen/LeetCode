@@ -1,3 +1,4 @@
+from math import ceil
 def twoSum( nums, target):
     for x in range(len(nums)):
         for y in range(len(nums)):
@@ -9,3 +10,4 @@ def twoSum( nums, target):
                 else:
                     continue
 
+print(ceil(7/3))
