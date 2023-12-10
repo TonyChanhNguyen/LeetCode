@@ -79,7 +79,7 @@ nums3 = nums1 + nums2 = [4,2,9,1,6]
 nums3.sort() = [1,2,4,6,9]
 length = 5
 mid = 2
-Since length = 10 is Odd number:
+Since length = 5 is Odd number:
     Median =  nums3[2] = 4.0
 ```
 
