@@ -6,3 +6,5 @@
 5. [Longest Palindromic Substring](./5.LongestPalindromicSubstring/README.md)
 6. [Zigzag Conversion](./6.ZigzagConversion/README.md)
 7. [Reverse Integer](./7.ReverseInteger/README.md)
+8. [String to Integer (atoi)](./8.StringtoInteger/README.md)
+9. [Palindrome Number](./9.PalindromeNumber/README.md)
