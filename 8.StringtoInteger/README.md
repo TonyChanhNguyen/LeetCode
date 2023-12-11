@@ -237,3 +237,5 @@ return checkOutOfRange(num if isPositive else num*-1) => return checkOutOfRange(
     else:                   => True
         return num = 123
 ```
+
+## Full code [here](./StringtoInteger.py)
