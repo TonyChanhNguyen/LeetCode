@@ -25,7 +25,7 @@ Input: nums = [3,3], target = 6
 Output: [0,1]
 ```
 
-Constraints:
+### Constraints:
 
 + ``2 <= nums.length <= 104``
 + ``-109 <= nums[i] <= 109``
@@ -33,7 +33,7 @@ Constraints:
 + Only one valid answer exists.
 
 ## Idea
-```
+```python
 # Run 2 loops to get each element in 'nums'
         for x in range(len(nums)):
             for y in range(len(nums)):

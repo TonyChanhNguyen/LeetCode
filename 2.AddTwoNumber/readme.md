@@ -22,7 +22,7 @@ Output: [0]
 Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
 Output: [8,9,9,9,0,0,0,1]
 ```
-Constraints:
+### Constraints:
 
 + The number of nodes in each linked list is in the range [1, 100].
 + ```0 <= Node.val <= 9```
@@ -31,24 +31,24 @@ Constraints:
 ## Idea
 
 #### Run a loop a get value of each element in l1 and l2. if is None return 0, else return it's value.
-```
+```python
             l1_value = l1.val if l1 else 0
             l2_value = l2.val if l2 else 0
 ```
 #### Calculate 'total'.
-```
+```python
             total = l1_value + l2_value + carry
 ```
 #### Input remainder of dividing 'total' with 10 into a ListNode. This will be a part of our result.
-```
+```python
             current.next = ListNode(total % 10)
 ```
 #### Calculate 'carry'. It is quotient of dividing 'total' with 10.
-```
+```python
             carry = total // 10
 ```
 #### Get value for next round
-```
+```python
             l1 = l1.next if l1 else None
             l2 = l2.next if l2 else None
             current = current.next
@@ -56,7 +56,7 @@ Constraints:
 
 ## Full code [here](../AddTwoNumber/AddTwoNumber.py)
 
-```
+```python
 # Definition for singly-linked list.
 class ListNode(object):
     def __init__(self, val=0, next=None):

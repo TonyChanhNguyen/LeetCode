@@ -5,3 +5,4 @@
 4. [Median of Two Sorted Arrays](./4.MedianofTwoSortedArrays/README.md)
 5. [Longest Palindromic Substring](./5.LongestPalindromicSubstring/README.md)
 6. [Zigzag Conversion](./6.ZigzagConversion/README.md)
+7. [Reverse Integer](./7.ReverseInteger/README.md)

@@ -26,7 +26,7 @@ Output: "bb"
     + Decrease l with 1
     + Increase r with 
 + Return value of string s at index 'l+1' to 'r'. 
-```
+```python
 def expand(l,r):
     while (l >=0 and r < len(s) and s[l] == s[r]):
         l -= 1
@@ -35,33 +35,33 @@ def expand(l,r):
 ```
 
 #### Run a loop with range is length of string
-```
+```python
 for i in range (len(s)):
 ``` 
 #### Define a temporary value to save the result
-```
+```python
 result = ""
 ```
 #### Input each index of string into expend function
-```
+```python
 sub1 = expand(i , i)
 ```
 
 #### Check if length of returned value is larger than length of result. Save its value to result, else do nothing.
-```
+```python
 if(len(sub1) > len(result)):
     result = sub1
 ```
 
 #### Do the same step with index and next index.
-```
+```python
 sub2 = expand (i, i+1)
 if(len(sub2) > len(result)):
     result = sub2
 ```
 
 #### At the end of loop. Return value of result
-```
+```python
 return result
 ```
 
@@ -70,7 +70,7 @@ return result
 String s = "zaday", length of s is ``5``. Expected result is ``ada``.
 
 At LOOP 1:
-```
+```python
     result  = ""
     i       = 0
     # Call function expand with l = 0, r = 0.
@@ -86,7 +86,7 @@ At LOOP 1:
     sub2 = "a", len(sub2)=1 > len(result)=1 => FALSE
 ```  
 At LOOP 2 :
-``` 
+``` python
     result  = "z"
     i       = 1
     # Call function expand with l = 1, r = 1.
@@ -101,7 +101,7 @@ At LOOP 2 :
     sub2 = "d", len(sub2)=1 > len(result)=1 => FALSE
 ``` 
 At LOOP 3 :
-``` 
+``` python
     result  = "z"
     i       = 2
     # Call function expand with l = 2, r = 2.
@@ -119,7 +119,7 @@ At LOOP 3 :
     sub2 = "d", len(sub2)=1 > len(result)=3 => FALSE
 ``` 
 At LOOP 4 :
-``` 
+``` python
     result  = "ada"
     i       = 3
     # Call function expand with l = 3, r = 3.
@@ -134,7 +134,7 @@ At LOOP 4 :
     sub2 = "y", len(sub2)=1 > len(result)=3 => FALSE
 ``` 
 At LOOP 5 (END):
-``` 
+``` python
     result  = "ada"
     i       = 4
     # Call function expand with l = 4, r = 4.
@@ -153,7 +153,7 @@ Return result  = "ada".
 String s = "ncbbcm", length of s is ``6``. Expected result is ``cbbc``.
 
 At LOOP 1:
-```
+```python
     result  = ""
     i       = 0
     # Call function expand with l = 0, r = 0.
@@ -169,7 +169,7 @@ At LOOP 1:
     sub2 = "c", len(sub2)=1 > len(result)=1 => FALSE
 ```  
 At LOOP 2 :
-``` 
+``` python
     result  = "n"
     i       = 1
     # Call function expand with l = 1, r = 1.
@@ -184,7 +184,7 @@ At LOOP 2 :
     sub2 = "b", len(sub2)=1 > len(result)=1 => FALSE
 ``` 
 At LOOP 3 :
-``` 
+``` python
     result  = "n"
     i       = 2
     # Call function expand with l = 2, r = 2.
@@ -204,7 +204,7 @@ At LOOP 3 :
         result =  sub2 = "cbbc"
 ``` 
 At LOOP 4 :
-``` 
+``` python
     result  = "cbbc"
     i       = 3
     # Call function expand with l = 3, r = 3.
@@ -219,7 +219,7 @@ At LOOP 4 :
     sub2 = "c", len(sub2)=1 > len(result)=4 => FALSE
 ``` 
 At LOOP 5 :
-``` 
+``` python
     result  = "cbbc"
     i       = 4
     # Call function expand with l = 4, r = 4.
@@ -234,7 +234,7 @@ At LOOP 5 :
     sub2 = "m", len(sub2)=1 > len(result)=4 => FALSE
 ``` 
 At LOOP 6 (END) :
-``` 
+``` python
     result  = "cbbc"
     i       = 5
     # Call function expand with l = 5, r = 5.

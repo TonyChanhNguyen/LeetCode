@@ -9,7 +9,7 @@ Y   I   R
 ```
 And then read line by line: ``"PAHNAPLSIIGYIR"``
 Write the code that will take a string and make this conversion given a number of rows:
-```
+```python
 string convert(string s, int numRows);
 ```
 
@@ -80,54 +80,54 @@ s
 ```
 So if the length of string is less than or equal numRows, the returned Zigzag string should be itself, too.
 #### Set a condition to check if the string is only one character or length of it less than or equal to numRows. Return itself.
-```
+```python
 if numRows == 1 or numRows >= len(s):
             return s
 ```
 
 #### Define an empty 2D array to store the temporary result. 
-```
+```python
 rows = [[]for row in range(numRows)]
 ```
 #### Define temporary variables index and step.
-```
+```python
 index = 0
 step = 1
 ```
 
 #### Set a loop run get each characters in string:
-```
+```python
 for char in s:
 ```
 
 #### Append it into rows at index.
-```
+```python
 rows[index].append(char)
 ```
 
 #### Set a condition to check if index at the begin of array, set step is 1.
-``````
+``````python
 if index == 0:
     step = 1
 ``````
 #### Else if index at the end of array, set step is -1.
-``````
+``````python
 elif index == numRows - 1:
     step = -1
 ``````
 #### Calculate index by step.
-```
+```python
 index += step # If step is 1 => Increase index. If step is -1 => Decrease index.
 ```
 
 #### At the end of loop, the result is saved to 2D array. Now, we will perform join the result of each row.
-```
+```python
 for i in range(numRows):
     rows[i] = ''.join(rows[i])
 ```
 
 #### After join characters of each rows, we will join the result of all rows into a string. That is our expected resulted.
-``````
+``````python
 return ''.join(rows)
 ``````
 
@@ -135,7 +135,7 @@ return ''.join(rows)
 We have a string ``s = "FirstCloudJourney"`` with ``numRows = 4``. Expected Zigzag string is ``"FluiCoorrtuJnysde"``
 
 At LOOP 1:
-```
+```python
 2D array rows
 [
     []              # index 0
@@ -161,7 +161,7 @@ index += step = 0 + 1 = 1
 '''
 ```
 At LOOP 2:
-```
+```python
 2D array rows
 [
     ["F"]           # index 0
@@ -186,7 +186,7 @@ index += step = 1 + 1 = 2
 ]
 ```
 At LOOP 3:
-```
+```python
 2D array rows
 [
     ["F"]           # index 0
@@ -211,7 +211,7 @@ index += step = 2 + 1 = 3
 ]
 ```
 At LOOP 4:
-```
+```python
 2D array rows
 [
     ["F"]           # index 0
@@ -236,7 +236,7 @@ index += step = 3 + -1 = 2
 ]
 ```
 At LOOP 5:
-```
+```python
 2D array rows
 [
     ["F"]           # index 0
@@ -261,7 +261,7 @@ index += step = 2 + -1 = 1
 ]
 ```
 At LOOP 6:
-```
+```python
 2D array rows
 [
     ["F"]           # index 0
@@ -286,7 +286,7 @@ index += step = 1 + -1 = 0
 ]
 ```
 At LOOP 7:
-```
+```python
 2D array rows
 [
     ["F"]               # index 0
@@ -310,7 +310,7 @@ index += step = 0 + 1 = 1
 ]
 ```
 At LOOP 8:
-```
+```python
 2D array rows
 [
     ["F",       "l"]        # index 0
@@ -335,7 +335,7 @@ index += step = 1 + 1 = 2
 ]
 ```
 At LOOP 9:
-```
+```python
 2D array rows
 [
     ["F",       "l"]        # index 0
@@ -360,7 +360,7 @@ index += step = 2 + 1 = 3
 ]
 ```
 At LOOP 10:
-```
+```python
 2D array rows
 [
     ["F",       "l"]        # index 0
@@ -385,7 +385,7 @@ index += step = 3 + -1 = 2
 ]
 ```
 At LOOP 11:
-```
+```python
 2D array rows
 [
     ["F",       "l"]        # index 0
@@ -410,7 +410,7 @@ index += step = 2 + -1 = 1
 ]
 ```
 At LOOP 12:
-```
+```python
 2D array rows
 [
     ["F",       "l"]        # index 0
@@ -435,7 +435,7 @@ index += step = 1 + -1 = 0
 ]
 ```
 At LOOP 13:
-```
+```python
 2D array rows
 [
     ["F",       "l"]                # index 0
@@ -459,7 +459,7 @@ index += step = 0 + 1 = 1
 ]
 ```
 At LOOP 14:
-```
+```python
 2D array rows
 [
     ["F",       "l",        "u"]    # index 0
@@ -483,8 +483,8 @@ index += step = 1 + 1 = 2
     ["s",       "d"]                # index 3
 ]
 ```
-At LOOP 14:
-```
+At LOOP 15:
+```python
 2D array rows
 [
     ["F",       "l",        "u"]    # index 0
@@ -508,8 +508,8 @@ index += step = 2 + 1 = 3
     ["s",       "d"]                # index 3
 ]
 ```
-At LOOP 14:
-```
+At LOOP 16:
+```python
 2D array rows
 [
     ["F",       "l",        "u"]    # index 0
@@ -533,8 +533,8 @@ index += step = 3 + -1 = 2
     ["s",       "d",        "e"]    # index 3
 ]
 ```
-At LOOP 15 (END):
-```
+At LOOP 17 (END):
+```python
 2D array rows
 [
     ["F",       "l",        "u"]    # index 0
@@ -561,7 +561,7 @@ index += step = 2 + -1 = 1
 
 #### Now, we will perform join the result of each row.
 At LOOP 1:
-```
+```python
 2D array rows
 [
     ["Flu"]                             # index 0
@@ -571,7 +571,7 @@ At LOOP 1:
 ]
 ```
 At LOOP 2:
-```
+```python
 2D array rows
 [
     ["Flu"]                             # index 0
@@ -581,7 +581,7 @@ At LOOP 2:
 ]
 ```
 At LOOP 3:
-```
+```python
 2D array rows
 [
     ["Flu"]                             # index 0
@@ -591,7 +591,7 @@ At LOOP 3:
 ]
 ```
 At LOOP 4:
-```
+```python
 2D array rows
 [
     ["Flu"]                             # index 0
@@ -602,7 +602,7 @@ At LOOP 4:
 ```
 
 #### After join characters of each rows, we will join the result of all rows into a string. That is our expected resulted.
-```
+```python
 return "FluiCoorrtuJnysde"
 ```
 
