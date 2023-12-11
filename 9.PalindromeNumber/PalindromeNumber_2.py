@@ -12,11 +12,4 @@ class Solution:
 
 test = Solution()
 print(test.isPalindrome(-123))
-
-# temp_x = 0
-# reverse_x = 0
-# while temp_x != 0:
-#     print("a")
-#     reverse_x = reverse_x*10 + temp_x%10
-#     temp_x = temp_x //10
-    
+print(test.isPalindrome(1221))
