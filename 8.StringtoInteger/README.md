@@ -14,7 +14,7 @@ Note:
 
 + Only the space character `' '`` is considered a whitespace character.
 + Do not ignore any characters other than the leading whitespace or the rest of the string after the digits.
-Example 1:
+#### Example 1:
 ``````
 Input: s = "42"
 Output: 42
@@ -28,7 +28,7 @@ Step 3: "42" ("42" is read in)
 The parsed integer is 42.
 Since 42 is in the range [-231, 231 - 1], the final result is 42.
 ``````
-Example 2:
+#### Example 2:
 ``````
 Input: s = "   -42"
 Output: -42
@@ -42,7 +42,7 @@ Step 3: "   -42" ("42" is read in)
 The parsed integer is -42.
 Since -42 is in the range [-231, 231 - 1], the final result is -42.
 ``````
-Example 3:
+#### Example 3:
 ``````
 Input: s = "4193 with words"
 Output: 4193
