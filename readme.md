@@ -8,3 +8,6 @@
 7. [Reverse Integer](./7.ReverseInteger/README.md)
 8. [String to Integer (atoi)](./8.StringtoInteger/README.md)
 9. [Palindrome Number](./9.PalindromeNumber/README.md)
+10. [Regular Expression Matching](./10.RegularExpressionMatching/README.md) -  Coming soon
+11. [Container With Most Water](./11.ContainerWithMostWater/README.md)
+12. [Integer to Roman](./12.IntegertoRoman/README.md)
